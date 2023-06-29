@@ -1,7 +1,5 @@
 #include "stdafx.h"
 #include "Context.h"
-#include "stb_image.h"
-GLuint texture_id;
 //-----------------------------------------------------------------------------
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam) noexcept
 {
@@ -60,17 +58,7 @@ Context::Context()
 	m_running = true;
 
 
-	int width, height, channels;
-	//stbi_set_flip_vertically_on_load(true); // Инвертирование оси Y
-	unsigned char* img_data = stbi_load("../textureTest.png", &width, &height, &channels, 0);
-
-	glGenTextures(1, &texture_id);
-	glBindTexture(GL_TEXTURE_2D, texture_id);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, img_data);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	//glBindTexture(GL_TEXTURE_2D, 0);
-	stbi_image_free(img_data);
+	
 }
 //-----------------------------------------------------------------------------
 Context::~Context()
@@ -83,12 +71,35 @@ Context::~Context()
 //-----------------------------------------------------------------------------
 void Context::Run(std::unique_ptr<IApp> app)
 {
+	if (app == nullptr) return;
+	app->Init();
+
+	auto prevTime = std::chrono::high_resolution_clock::now();
+	float deltaTime = 0.0f;
+	float tickPause = 0.0f;
+
+	constexpr float TickSize = 1.0f;
+
 	while (m_running)
 	{
+		const auto currentTime = std::chrono::high_resolution_clock::now();
+		const std::chrono::duration<float> elapsedTime = currentTime - prevTime;
+		prevTime = currentTime;
+		deltaTime = elapsedTime.count();
+		tickPause += deltaTime;
+
 		if (PeekMessage(&m_msg, m_hwnd, 0, 0, PM_REMOVE)) 
 		{
 			TranslateMessage(&m_msg);
 			DispatchMessage(&m_msg);
+		}
+
+		if (!app->Update(deltaTime)) break;
+
+		if (tickPause > TickSize)
+		{
+			tickPause = 0.0f;
+			app->Tick();
 		}
 
 		RECT rect;
@@ -105,15 +116,13 @@ void Context::Run(std::unique_ptr<IApp> app)
 		glLoadIdentity();
 		gluOrtho2D(0.0, 480.0 * m_aspectWindows, 480.0, 0.0);
 
+		app->Frame();
 
-		glBegin(GL_QUADS);
-		glTexCoord2f(0.0, 0.0); glVertex2f(0.0f, 0.0f);
-		glTexCoord2f(1.0, 0.0); glVertex2f(64.0f, 0.0f);
-		glTexCoord2f(1.0, 1.0); glVertex2f(64.0f, 64.0f);
-		glTexCoord2f(0.0, 1.0); glVertex2f(0.0f, 64.0f);
-		glEnd();
+		
 
 		SwapBuffers(m_hdc);
+
+		std::this_thread::sleep_for(std::chrono::milliseconds(10));
 	}
 }
 //-----------------------------------------------------------------------------

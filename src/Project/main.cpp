@@ -1,5 +1,6 @@
 ﻿#include "stdafx.h"
 #include "Context.h"
+#include "GameApp.h"
 //-----------------------------------------------------------------------------
 #pragma comment( lib, "OpenGL32.lib" )
 #pragma comment( lib, "glu32.lib" )
@@ -11,7 +12,7 @@ int main(
 	try
 	{
 		Context context;
-		context.Run(nullptr);
+		context.Run(std::make_unique<GameApp>());
 	}
 	catch (const Exception& exc)
 	{

@@ -98,6 +98,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Context.cpp" />
+    <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="stb.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -108,6 +109,7 @@
   <ItemGroup>
     <ClInclude Include="Context.h" />
     <ClInclude Include="Exception.h" />
+    <ClInclude Include="GameApp.h" />
     <ClInclude Include="IApp.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="stdafx.h" />
