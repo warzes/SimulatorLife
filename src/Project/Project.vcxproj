@@ -101,6 +101,7 @@
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="stb.cpp" />
@@ -116,6 +117,7 @@
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="GameConfig.h" />
     <ClInclude Include="IApp.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="Pawn.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="stb_image.h" />

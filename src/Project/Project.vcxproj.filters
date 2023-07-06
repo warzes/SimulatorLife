@@ -21,6 +21,9 @@
     <ClCompile Include="Pawn.cpp">
       <Filter>Game\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Game\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exception.h">
@@ -47,6 +50,9 @@
     </ClInclude>
     <ClInclude Include="GameConfig.h" />
     <ClInclude Include="Pawn.h">
+      <Filter>Game\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
       <Filter>Game\Entity</Filter>
     </ClInclude>
   </ItemGroup>
