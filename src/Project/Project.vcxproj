@@ -100,6 +100,7 @@
     <ClCompile Include="Context.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="stb.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -111,6 +112,8 @@
     <ClInclude Include="Exception.h" />
     <ClInclude Include="GameApp.h" />
     <ClInclude Include="IApp.h" />
+    <ClInclude Include="MiniMath.h" />
+    <ClInclude Include="Sprite.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>

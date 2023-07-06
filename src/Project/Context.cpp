@@ -56,9 +56,6 @@ Context::Context()
 	glEnable(GL_TEXTURE_2D);
 
 	m_running = true;
-
-
-	
 }
 //-----------------------------------------------------------------------------
 Context::~Context()
@@ -118,11 +115,11 @@ void Context::Run(std::unique_ptr<IApp> app)
 
 		app->Frame();
 
-		
-
 		SwapBuffers(m_hdc);
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(10));
 	}
+
+	app.reset();
 }
 //-----------------------------------------------------------------------------

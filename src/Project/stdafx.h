@@ -6,11 +6,13 @@
 #include <Windows.h>
 #include <gl/GL.h>
 #include <gl/GLU.h>
+#include <cassert>
 #include <memory>
 #include <chrono>
 #include <iostream>
 #include <string_view>
 #include <string>
+#include <unordered_map>
 #pragma warning(pop)
 #pragma warning(disable: 4514)
 #pragma warning(disable: 4625)

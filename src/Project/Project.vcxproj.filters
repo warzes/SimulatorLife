@@ -12,6 +12,9 @@
     <ClCompile Include="GameApp.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Framework\Resource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exception.h">
@@ -30,6 +33,12 @@
     <ClInclude Include="GameApp.h">
       <Filter>Game</Filter>
     </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Framework\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="MiniMath.h">
+      <Filter>Framework\Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Framework">
@@ -43,6 +52,12 @@
     </Filter>
     <Filter Include="Game">
       <UniqueIdentifier>{fbe6593f-607c-48d3-a192-ab1e755a9ccd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Resource">
+      <UniqueIdentifier>{a98a18d0-5ead-4194-9112-cdcbca582d4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Math">
+      <UniqueIdentifier>{8f098a16-12b5-4294-b32e-160e4ebd218a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
