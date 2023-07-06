@@ -1,29 +1,33 @@
 #include "stdafx.h"
 #include "GameApp.h"
-#include "Sprite.h"
-Sprite* m_sprite;
+#include "Pawn.h"
+Pawn* pawn;
 //-----------------------------------------------------------------------------
 GameApp::~GameApp()
 {
-	delete m_sprite;
+	delete pawn;
 }
 //-----------------------------------------------------------------------------
 void GameApp::Init()
 {
-	m_sprite = new Sprite("../textureTest.png");
+	pawn = new Pawn("../textureTest.png");
+	pawn->SetPosition({ 300.0f, 200.0f });
+	pawn->SetTargetMove({ 50, 50 });
 }
 //-----------------------------------------------------------------------------
 bool GameApp::Update(float deltaTime)
 {
+	pawn->Update(deltaTime);
 	return true;
 }
 //-----------------------------------------------------------------------------
 void GameApp::Frame()
 {
-	m_sprite->Draw({ 32.0f, 32.0f }, { 64.0f });
+	pawn->Draw();
 }
 //-----------------------------------------------------------------------------
 void GameApp::Tick()
 {
+	pawn->Tick();
 }
 //-----------------------------------------------------------------------------

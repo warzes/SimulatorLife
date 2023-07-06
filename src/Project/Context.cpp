@@ -75,8 +75,6 @@ void Context::Run(std::unique_ptr<IApp> app)
 	float deltaTime = 0.0f;
 	float tickPause = 0.0f;
 
-	constexpr float TickSize = 1.0f;
-
 	while (m_running)
 	{
 		const auto currentTime = std::chrono::high_resolution_clock::now();
@@ -111,7 +109,7 @@ void Context::Run(std::unique_ptr<IApp> app)
 
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
-		gluOrtho2D(0.0, 480.0 * m_aspectWindows, 480.0, 0.0);
+		gluOrtho2D(0.0, ScreenHeight * m_aspectWindows, ScreenHeight, 0.0);
 
 		app->Frame();
 

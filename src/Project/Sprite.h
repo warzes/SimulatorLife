@@ -1,7 +1,5 @@
 #pragma once
 
-#include "MiniMath.h"
-
 struct TextureCache;
 
 class Sprite
@@ -10,7 +8,7 @@ public:
 	Sprite(std::string_view fileName);
 	~Sprite();
 
-	void Draw(Vector2 position, Vector2 size);
+	void Draw(glm::vec2 position, glm::vec2 size);
 
 private:
 	std::string m_filename;

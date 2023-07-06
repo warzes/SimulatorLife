@@ -81,9 +81,9 @@ Sprite::~Sprite()
 		deleteTexture(m_filename);
 }
 
-void Sprite::Draw(Vector2 position, Vector2 size)
+void Sprite::Draw(glm::vec2 position, glm::vec2 size)
 {
-	Vector2 halfSize = { size.x * 0.5f, size.y * 0.5f };
+	glm::vec2 halfSize = size * 0.5f;
 	position -= halfSize;
 
 	glBindTexture(GL_TEXTURE_2D, m_id);

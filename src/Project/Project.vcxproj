@@ -98,8 +98,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Context.cpp" />
+    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="GameApp.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="stb.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -109,10 +111,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Context.h" />
+    <ClInclude Include="Entity.h" />
     <ClInclude Include="Exception.h" />
     <ClInclude Include="GameApp.h" />
+    <ClInclude Include="GameConfig.h" />
     <ClInclude Include="IApp.h" />
-    <ClInclude Include="MiniMath.h" />
+    <ClInclude Include="Pawn.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="stdafx.h" />

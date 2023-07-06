@@ -15,6 +15,12 @@
     <ClCompile Include="Sprite.cpp">
       <Filter>Framework\Resource</Filter>
     </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Game\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Pawn.cpp">
+      <Filter>Game\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exception.h">
@@ -36,8 +42,12 @@
     <ClInclude Include="Sprite.h">
       <Filter>Framework\Resource</Filter>
     </ClInclude>
-    <ClInclude Include="MiniMath.h">
-      <Filter>Framework\Math</Filter>
+    <ClInclude Include="Entity.h">
+      <Filter>Game\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="GameConfig.h" />
+    <ClInclude Include="Pawn.h">
+      <Filter>Game\Entity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +68,15 @@
     </Filter>
     <Filter Include="Framework\Math">
       <UniqueIdentifier>{8f098a16-12b5-4294-b32e-160e4ebd218a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Entity">
+      <UniqueIdentifier>{0c80720e-69d8-474d-9a99-acffd77c0900}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\World">
+      <UniqueIdentifier>{f3987178-6d8c-4059-a9d0-1e728876431b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Actions">
+      <UniqueIdentifier>{d509e8ae-126d-4f23-91af-570563786bdd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
